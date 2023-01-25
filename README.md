@@ -1,11 +1,11 @@
-#Diversity in CS
+# Diversity in CS
 
-React Native Mobile App for creating & participating meetings in purposes
+**React Native Mobile App for creating & participating meetings in purposes**
 
 Features and simple skeletons: 
 https://docs.google.com/presentation/d/1X9I6CouQRC4O8S91pIYiw7IbweoSaFWW/edit?usp=share_link&ouid=113005264917344394714&rtpof=true&sd=true 
 
-#Features
+# Features
 - Sign up/Sign in (Google OAUTH API)
 - Profile check/edit
 - Choose categories that are interested
