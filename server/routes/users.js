@@ -12,7 +12,7 @@ const router = express.Router();
 router.get("/:id", verifyToken, getUser);
 router.get("/:id/events", verifyToken, getUserEvents);
 
-/* UPDATE */
+/* UPDATE: NOT REALLY SURE WHAT THIS DOES YET :( */
 router.patch("/:id/:new", verifyToken, addUser);
 
 export default router;
