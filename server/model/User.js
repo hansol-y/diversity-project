@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import Event from "./Event.js"
+// import Event from "../model/Event.js"
 
 const UserSchema = new mongoose.Schema(
     {
