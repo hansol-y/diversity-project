@@ -11,8 +11,9 @@ import { fileURLToPath } from "url";
 import authRoutes from "./routes/auth.js";
 import userRoutes from "./routes/users.js";
 import { register } from "./controller/auth.js";
-
-/* finished mongodb installation and setup (~00:20:40) */
+import User from "./model/User.js"
+import Event from "./model/Event.js"
+import { users, events } from "./data/index.js";
 
 /* CONFIGURATIONS */
 const __filename = fileURLToPath(import.meta.url);
@@ -57,8 +58,8 @@ mongoose
   .then(() => {
     app.listen(PORT, () => console.log(`Server Port: ${PORT}`));
 
-    /* ADD DATA ONE TIME */
+    /* ADD DATA ONE TIME: added Fri Mar 24*/
     // User.insertMany(users);
-    // Post.insertMany(posts);
+    // Event.insertMany(events);
   })
   .catch((error) => console.log(`${error} did not connect`));

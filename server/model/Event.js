@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-// import User from '../model/User.js';
+// import User from './model/User.js';
 
 const EventSchema = new mongoose.Schema(
     {
@@ -22,10 +22,10 @@ const EventSchema = new mongoose.Schema(
             type: String,
             required: true
         },
-        imagePath: {
-            type: String,
-            default: ""
-        },
+        // imagePath: {
+        //     type: String,
+        //     default: ""
+        // },
         participants: {
             type: Array,
             default: [] // Array of User
