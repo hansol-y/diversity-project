@@ -10,6 +10,7 @@ import path from "path";
 import { fileURLToPath } from "url";
 import authRoutes from "./routes/auth.js";
 import userRoutes from "./routes/users.js";
+import eventRoutes from "./routes/events.js";
 import { register } from "./controller/auth.js";
 import User from "./model/User.js"
 import Event from "./model/Event.js"
@@ -46,7 +47,8 @@ app.use("/assets", express.static(path.join(__dirname, "public/assets")));
 /* ROUTES */
 app.use("/auth", authRoutes);
 app.use("/users", userRoutes);
-
+/* ADDED MARCH 26, 2023 */
+app.use("/", eventRoutes);
 
 /* MONGOOSE SETUP */
 const PORT = process.env.PORT || 6001;
