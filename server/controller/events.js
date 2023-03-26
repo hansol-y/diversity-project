@@ -3,8 +3,7 @@ import Event from "./Event.js";
 
 export const createEvent = async (req, res) => {
     try {
-        const { userId, title, date, description, imagePath, location } = req.body;
-        // const { userId, title, date, description, imagePath, location, category } = req.body;
+        const { userId, title, date, description, imagePath, location, category } = req.body;
         const creator = await User.findById(userId);
         const newEvent = new Event({
             title: title,
@@ -13,7 +12,7 @@ export const createEvent = async (req, res) => {
             description: description,
             imagePath: imagePath,
             participants: [creator],
-            // category: category
+            category: category
         });
         await newEvent.save();
 
@@ -24,15 +23,15 @@ export const createEvent = async (req, res) => {
     }
 }
 
-// export const getEventsInCategory = async (req, res) => {
-//     try {
-//         const { category } = req.params;
-//         const events = await Event.find({ category: category });
-//         res.json(events);
-//     } catch (err) {
-//         res.status(404).json({message: "Event with given category not found"});
-//     }
-// }
+export const getEventsInCategory = async (req, res) => {
+    try {
+        const { category } = req.params;
+        const events = await Event.find({ category: category });
+        res.json(events);
+    } catch (err) {
+        res.status(404).json({message: "Event with given category not found"});
+    }
+}
 
 export const participate = (req, res) => {
     try {
