@@ -68,3 +68,9 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+### Setting up MongoDB in your local environment
+Create a .env file in your ./server folder and set the following variables:
+MONGO_URL = 'mongodb+srv://diversityuser:Password@diversityproject.srt6rxh.mongodb.net/?retryWrites=true&w=majority'
+JWT_SECRET = 'diversityincsprojecthub
+PORT = 3001
