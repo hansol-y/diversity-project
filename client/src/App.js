@@ -1,6 +1,7 @@
 import { BrowserRouter, Navigate, Routes, Route } from "react-router-dom";
 import HomePage from "scenes/homePage";
 import LoginPage from "scenes/loginPage";
+import CreateEventPage from "scenes/eventPage";
 import ProfilePage from "scenes/profilePage";
 import { useMemo } from "react";
 import { useSelector } from "react-redux";
@@ -30,6 +31,12 @@ function App() {
               path="/profile/:userId"
               // element={isAuth ? <ProfilePage /> : <Navigate to="/" />}
               element={<ProfilePage />}
+
+            />
+            <Route
+              path="/createEvents"
+              // element={isAuth ? <ProfilePage /> : <Navigate to="/" />}
+              element={<CreateEventPage />}
 
             />
           </Routes>
