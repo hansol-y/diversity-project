@@ -1,4 +1,4 @@
-import { Box, useMediaQuery } from "@mui/material";
+import { Box, useMediaQuery, Typography, useTheme } from "@mui/material";
 import { useSelector } from "react-redux";
 import Navbar from "scenes/navbar";
 
@@ -10,10 +10,16 @@ import FriendListWidget from "scenes/widgets/FriendListWidget";
 
 import api from './axios.config.js';
 import {useState, useEffect} from 'react';
+import { useNavigate } from "react-router-dom";
 
 const HomePage = () => {
   const isNonMobileScreens = useMediaQuery("(min-width:1000px)");
   const [events, setEvents] = useState([]);
+  const navigate = useNavigate();
+  const createEventPage = () => {
+    navigate("/events/createEvent");
+  }
+  const { palette } = useTheme();
   useEffect(() => {
     api.get('/events').then((res) => {
       setEvents(res.data);
@@ -21,6 +27,7 @@ const HomePage = () => {
       console.log(err);
     });
   }, []);
+  
   return (
     <Box>
       <Navbar />
@@ -39,6 +46,21 @@ const HomePage = () => {
             </div>
           ))}
         </div>
+        <Typography
+              onClick={() => {
+                createEventPage();
+              }}
+              sx={{
+                textDecoration: "underline",
+                color: palette.primary.main,
+                "&:hover": {
+                  cursor: "pointer",
+                  color: palette.primary.light,
+                },
+              }}
+            >
+              {"Create Event"}
+            </Typography>
       </Box>
     </Box>
   );
