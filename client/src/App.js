@@ -34,7 +34,7 @@ function App() {
 
             />
             <Route
-              path="/createEvents"
+              path="/events/createEvent"
               // element={isAuth ? <ProfilePage /> : <Navigate to="/" />}
               element={<CreateEventPage />}
 

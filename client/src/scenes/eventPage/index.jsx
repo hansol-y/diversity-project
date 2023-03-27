@@ -3,7 +3,14 @@ import Form from "./Form";
 
 import Navbar from "scenes/navbar";
 
+import { useEffect } from "react";
+
 const CreateEventPage = () => {
+
+  useEffect(() => {
+    console.log(window.location);
+  }, []);
+  
   const theme = useTheme();
   const isNonMobileScreens = useMediaQuery("(min-width: 1000px)");
   return (

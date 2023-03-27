@@ -16,18 +16,18 @@ import { setEvents } from "state";
 
 const eventCreateSchema = yup.object().shape({
   title: yup.string().required("Please set title").min(2).max(50),
-  date: yup.date().required("Please set date of the event"),
+  date: yup.string().required("Please set date of the event"),
   description: yup.string().required("Please provide explanations of the event"),
   location: yup.string().required("Please set location of the event")
 });
 
-const findEventSchema = yup.object.shape({
+const findEventSchema = yup.object().shape({
   title: yup.string().required("Enter the event title you are looking for"),
 });
 
 const initialValuesEvent = {
   title: "",
-  date: dayjs('2025-01-01'),
+  date: '2025-01-01',
   description: "",
   location: "virtual",
   participants: yup.array()
@@ -113,7 +113,7 @@ const Form = () => {
               helperText={touched.title && errors.title}
               sx={{ gridColumn: "span 4" }}
             />
-            <DateField
+            <TextField
               label="Date"
               type="date"
               onBlur={handleBlur}
